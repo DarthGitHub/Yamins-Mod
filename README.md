@@ -1,2 +1,2 @@
 # Yamins-Mod
-My mod on Terraria
+My mod on Terraria yes
