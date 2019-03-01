@@ -1,0 +1,113 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria;
+using Terraria.ModLoader;
+using Terraria.UI;
+
+namespace YaxilMod.UIs
+{
+    public class BarUI : UIState
+    {
+       
+        public Texture2D MainTexture;
+        public Texture2D BarTexture;
+        public Texture2D MainTexture2;
+        public Texture2D BarTexture2;
+       
+        public int CalculateLength(int value, int maxvalue, int maxlength)
+        {
+            return (value * maxlength) / maxvalue;
+        }
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            
+            if (MainTexture == null) 
+                MainTexture = ModLoader.GetTexture("YaxilMod/UIs/YaxilModBarMainTexture");
+            if (BarTexture == null)
+                BarTexture = ModLoader.GetTexture("YaxilMod/UIs/HealthBarTexture");
+
+        
+            if (MainTexture != null && BarTexture != null) 
+            {
+              
+                Player p = Main.LocalPlayer; 
+                Vector2 position = new Vector2(Main.screenWidth / 2 - MainTexture.Width / 2, Main.screenHeight / 2 - 300);
+               
+                spriteBatch.Draw
+                    (
+                        MainTexture, 
+                        position, 
+                        null, 
+                        Color.White, 
+                        0f, 
+                        Vector2.Zero, 
+                        1f, 
+                        SpriteEffects.None, 
+                        1f 
+                    );
+                
+                var length = CalculateLength(p.statLife, p.statLifeMax2, BarTexture.Width);
+            
+                spriteBatch.Draw
+                (
+                    BarTexture, 
+                    position + new Vector2(12, 12),
+                    new Rectangle(0, 0, length, BarTexture.Height),
+                    Color.White,
+                    0f,
+                    Vector2.Zero,
+                    1f,
+                    SpriteEffects.None,
+                    1f
+                );
+
+                 if (MainTexture2 == null) 
+                MainTexture2 = ModLoader.GetTexture("YaxilMod/UIs/YaxilModBarMainTexture2");
+            if (BarTexture2 == null)
+                BarTexture2 = ModLoader.GetTexture("YaxilMod/UIs/ManaBarTexture");
+
+            //Now lets actually begin drawing stuff
+            if (MainTexture2 != null && BarTexture2 != null)
+            {
+                
+                Player pmana = Main.LocalPlayer; 
+                Vector2 positionmana = new Vector2(Main.screenWidth / 2 - MainTexture.Width / 2, Main.screenHeight / 2 - 270);
+                spriteBatch.Draw
+                    (
+                        MainTexture2, 
+                        positionmana, 
+                        null, 
+                        Color.White,
+                        0f, 
+                        Vector2.Zero, 
+                        1f,
+                        SpriteEffects.None, 
+                        1f 
+                    );
+                
+                var lengthmana = CalculateLength(pmana.statMana, pmana.statManaMax2, BarTexture2.Width);
+                
+                spriteBatch.Draw
+                (
+                    BarTexture2, 
+                    positionmana + new Vector2(12, 12), 
+                    new Rectangle(0, 0, lengthmana, BarTexture2.Height),
+                    Color.White,
+                    0f,
+                    Vector2.Zero,
+                    1f,
+                    SpriteEffects.None,
+                    1f
+                );
+
+               
+            }
+        }
+    }
+}
+}
