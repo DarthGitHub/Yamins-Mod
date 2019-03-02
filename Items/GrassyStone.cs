@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace YaxilMod.Items
 {
-    public class grassystone : ModItem
+    public class GrassyStone : ModItem
     {
         public override void SetStaticDefaults() {
             Tooltip.SetDefault("A special stone, only the bravest can find them...");
