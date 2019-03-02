@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace YaxilMod.Items.Weapons
 {
-    public class vileblade : ModItem
+    public class VileBlade : ModItem
     {
         public override void SetStaticDefaults()
         {
