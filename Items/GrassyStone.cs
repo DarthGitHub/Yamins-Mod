@@ -23,7 +23,7 @@ namespace YaxilMod.Items
             recipe.SetResult(this, 999);
             recipe.AddRecipe();
             recipe = new ModRecipe(mod);
-            recipe.AddRecipeGroup("ExampleMod:ExampleItem");
+            recipe.AddRecipeGroup("YaxilMod:YaxilModItem");
             recipe.SetResult(this, 999);
             recipe.AddRecipe();
                    }
