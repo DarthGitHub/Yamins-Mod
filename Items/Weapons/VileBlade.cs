@@ -9,7 +9,7 @@ namespace YaxilMod.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("VileBlade");
-            Tooltip.SetDefault("The smaller version of the Leaf Lasher, the sword of legend...");
+            Tooltip.SetDefault("A legendary dagger used by the mythical hero of this land");
         }
         public override void SetDefaults()
         {
