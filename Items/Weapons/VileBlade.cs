@@ -2,6 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
+
 namespace YaxilMod.Items.Weapons
 {
     public class VileBlade : ModItem
@@ -27,6 +28,16 @@ namespace YaxilMod.Items.Weapons
             item.autoReuse = true;
 
         }
+
+        public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+        {
+            if (Main.rand.NextBool(10))
+            {
+                target.AddBuff(BuffID.Poisoned, 180, false);
+            }
+        }
+
+
 
         public override void AddRecipes()
         {
