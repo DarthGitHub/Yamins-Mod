@@ -33,12 +33,12 @@ namespace YaxilMod.Items.Weapons
         }
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-         float numberProjectiles = 6; // This defines how many projectiles to shot
+         float numberProjectiles = 6;
          float rotation = MathHelper.ToRadians(45);
-         position += Vector2.Normalize(new Vector2(speedX, speedY)) * 45f; //this defines the distance of the projectiles form the player when the projectile spawns
+         position += Vector2.Normalize(new Vector2(speedX, speedY)) * 45f; 
          for (int i = 0; i < numberProjectiles; i++)
             {
-              Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedBy(MathHelper.Lerp(-rotation, rotation, i / (numberProjectiles - 1))) * .4f; // This defines the projectile roatation and speed. .4f == projectile speed
+              Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedBy(MathHelper.Lerp(-rotation, rotation, i / (numberProjectiles - 1))) * .4f; 
                 Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
             }
               return false; 
