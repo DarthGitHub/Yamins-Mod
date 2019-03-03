@@ -22,7 +22,7 @@ namespace YaxilMod.Items.Tiles
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
             disableSmartCursor = true;
             TileObjectData.addTile(Type);
-            TileObjectData.newTile.CoordinateHeights = new[] { 26 };
+            TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
         }
 
         public override void NumDust(int i, int j, bool fail, ref int num)
