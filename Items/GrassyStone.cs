@@ -7,6 +7,7 @@ namespace YaxilMod.Items
     {
         public override void SetStaticDefaults()
         {
+			DisplayName.SetDefault("Grassy Stone");
             Tooltip.SetDefault("A special stone, only the bravest can find them...");
         }
 
@@ -18,7 +19,6 @@ namespace YaxilMod.Items
             item.value = 100;
             item.rare = 1;
         }
-        
 
         public override void AddRecipes()
         {
@@ -39,5 +39,4 @@ namespace YaxilMod.Items
         }
           
     }
-    }
-
+}
