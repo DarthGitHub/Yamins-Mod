@@ -22,19 +22,18 @@ namespace YaxilMod.Items
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.DirtBlock, 1);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();
-			recipe = new ModRecipe(mod);
-			recipe.AddRecipeGroup("YaxilMod:JungleCells", 1);
-			recipe.AddTile(ItemID.WorkBench);
-			recipe.SetResult(this, 2);
-			recipe.AddRecipe();
-			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(YaxilMod, "JungleCells", 1);
-			recipe.AddTile(mod.TileType("YaxilWorkBench"));
-			recipe.SetResult(this, 3);
-			recipe.AddRecipe();
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(mod.ItemType("JungleCells"));
+            recipe.AddTile(ItemID.WorkBench);
+            recipe.SetResult(this, 2);
+            recipe.AddRecipe();
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(mod.ItemType("JungleCells"));
+            recipe.AddTile(mod.TileType("YaxilWorkBench"));
+            recipe.SetResult(this, 3);
+            recipe.AddRecipe();
         }
     }
 }
